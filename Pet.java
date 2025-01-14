@@ -3,14 +3,12 @@ public class Pet {
     private String type;
     private int age;
 
-    // Constructor
     public Pet(String name, String type, int age) {
         this.name = name;
         this.type = type;
         this.age = age;
     }
 
-    // Getter and Setter methods
     public String getName() {
         return name;
     }
@@ -35,7 +33,6 @@ public class Pet {
         this.age = age;
     }
 
-    // Method to display pet details
     public void displayDetails() {
         System.out.println("Pet Name: " + name + ", Type: " + type + ", Age: " + age);
     }
