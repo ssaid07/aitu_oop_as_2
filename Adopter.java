@@ -33,7 +33,21 @@ public class Adopter {
         this.contact = contact;
     }
 
-    public void displayDetails() {
-        System.out.println("Adopter Name: " + name + ", Age: " + age + ", Contact: " + contact);
+    @Override
+    public String toString() {
+        return "Adopter{name='" + name + "', age=" + age + ", contact='" + contact + "'}";
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        Adopter adopter = (Adopter) obj;
+        return age == adopter.age && name.equals(adopter.name) && contact.equals(adopter.contact);
+    }
+
+    @Override
+    public int hashCode() {
+        return java.util.Objects.hash(name, age, contact);
     }
 }

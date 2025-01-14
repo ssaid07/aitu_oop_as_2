@@ -23,7 +23,21 @@ public class Shelter {
         this.location = location;
     }
 
-    public void displayDetails() {
-        System.out.println("Shelter Name: " + name + ", Location: " + location);
+    @Override
+    public String toString() {
+        return "Shelter{name='" + name + "', location='" + location + "'}";
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        Shelter shelter = (Shelter) obj;
+        return name.equals(shelter.name) && location.equals(shelter.location);
+    }
+
+    @Override
+    public int hashCode() {
+        return java.util.Objects.hash(name, location);
     }
 }
